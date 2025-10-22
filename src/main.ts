@@ -28,6 +28,9 @@ const hoverGrid = new HoverGrid('rgba(78, 175, 255, 1)', 400);
 document.body.appendChild(hoverGrid);
 hoverGrid.drawGrid(70, 70);
 
+// initial visibility check
+checkVisibility();
+
 // on hover of any .info, show the .info-content
 document.addEventListener("mouseover", (event) => {
   if (!(event.target instanceof HTMLElement)) return;
@@ -76,7 +79,7 @@ if (!isMobile) {
 }
 
 function checkVisibility() {
-  document.querySelectorAll('.demoBox, .externalLink, .chip').forEach((element) => {
+  document.querySelectorAll('.demoBox, .externalLink, .chip, .repo').forEach((element) => {
     const rect = element.getBoundingClientRect();
     const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
     element.classList.toggle('visible', isVisible);

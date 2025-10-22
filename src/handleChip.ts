@@ -1,4 +1,4 @@
-import { Chip } from './CustomElements/chip/chip';
+import { Chip } from './CustomElements/Chip/Chip';
 
 const isMobile = /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(navigator.userAgent) || window.matchMedia('(pointer: coarse)').matches;
 
