@@ -21,9 +21,12 @@ export type Engine = BezierEngine | ParticlesEngine
 
 import { HoverGrid } from './CustomElements/hoverGrid/hoverGrid';
 
+import './RenderIntro'
 import './RenderDemos'
 import './RenderProjects'
 import './handleChip'
+
+
 const hoverGrid = new HoverGrid('rgba(78, 175, 255, 1)', 400);
 document.body.appendChild(hoverGrid);
 hoverGrid.drawGrid(70, 70);
@@ -100,4 +103,10 @@ function checkVisibility() {
 
 document.addEventListener('scroll', (event) => {
   checkVisibility();
+});
+
+// set --viewWidthPx CSS variable
+document.documentElement.style.setProperty('--viewWidthPx', `${window.innerWidth}`);
+window.addEventListener('resize', () => {
+  document.documentElement.style.setProperty('--viewWidthPx', `${window.innerWidth}`);
 });

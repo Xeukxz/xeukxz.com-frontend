@@ -22,7 +22,7 @@ export class ExternalLink extends HTMLAnchorElement {
     //   </div>
     // `;
     this.innerHTML = `
-      <div class="borderSvgEffect">
+      <div class="borderSvgEffect" aria-hidden="true">
         <svg preserveAspectRatio="none" class="borderHighlightSvg">
           <defs>
             <mask id="borderMask${linkCount}" maskUnits="objectBoundingBox" x="-50%" y="-50%" width="200%" height="200%">

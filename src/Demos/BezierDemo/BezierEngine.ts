@@ -135,30 +135,6 @@ export class BezierEngine extends BaseEngine {
       }
     });
 
-    const headerBar = this.canvas.canvas.parentElement!.parentElement!.querySelector(".headerBar")!;
-    const reloadButton = headerBar.querySelector(".reloadIcon")!;
-    const collapseButton = headerBar.querySelector(".collapseIcon")!;
-
-    reloadButton.addEventListener("click", () => {
-      // this.canvas.updateSize(50,50);
-      console.log(this.path)
-      let jump = ((this.canvas.width - 100) / 5)
-      let y = this.canvas.height / 2
-      this.path.points= [
-        [0     , y+(y - 50)],
-        [jump*1, y-(y - 50)],
-        [jump*4, y-(y - 50)],
-        [jump*5, y+(y - 50)],
-        [jump*2.5, y+(y - 50)],
-      ].map(([x, y]) => new Vector2(x+ 50, y))
-      this.state.progress = 0;
-    });
-
-    collapseButton.addEventListener("click", () => {
-      if(headerBar.parentElement!.classList.contains("collapsed")) this.pause();
-      else this.unpause(250);
-      // this.state.paused ? this.unpause(250) : this.pause()
-    });
   }
 
   public tick(): void {
@@ -214,5 +190,20 @@ export class BezierEngine extends BaseEngine {
       requestAnimationFrame(animationLoop);
     }
     requestAnimationFrame(animationLoop);
+  }
+
+  public reload(): void {
+    // this.canvas.updateSize(50,50);
+    console.log(this.path)
+    let jump = ((this.canvas.width - 100) / 5)
+    let y = this.canvas.height / 2
+    this.path.points= [
+      [0     , y+(y - 50)],
+      [jump*1, y-(y - 50)],
+      [jump*4, y-(y - 50)],
+      [jump*5, y+(y - 50)],
+      [jump*2.5, y+(y - 50)],
+    ].map(([x, y]) => new Vector2(x+ 50, y))
+    this.state.progress = 0;
   }
 }

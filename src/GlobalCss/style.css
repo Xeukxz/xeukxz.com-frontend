@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+*:focus-visible {
+  outline: 2px solid #4A90E2;
+  outline-offset: 2px;
+  border-radius: 3px;
+} 
+
 /* @media (prefers-color-scheme: dark) {
   :root {
     --bg-dark: oklch(0.15 0 0);
@@ -44,6 +50,7 @@
   --bg-highlight: oklch(0.3 0 0);
   --bg-highlight-transparent: oklch(0.3 0 0 / 0.5);
   --text: oklch(0.9 0 0);
+  --text-bright: oklch(0.98 0 0);
   --text-dim: oklch(0.8 0 0);
   --text-muted: oklch(0.75 0 0);
   --primary: #4eafff;
@@ -61,6 +68,8 @@
     inset 0 4px 8px #ffffff30,
     0 4px 8px #00000030,
     0 8px 16px #00000015;
+
+  --viewWidthPx: 1200;
 
   color-scheme: light dark;
   color: var(--text-dim);
@@ -85,6 +94,10 @@ ol {
 
 p {
   color: var(--text-muted);
+}
+
+img {
+  display: block;
 }
 
 body {
@@ -283,4 +296,86 @@ button:focus-visible {
   100% {
     transform: scale(1);
   }
+}
+
+#intro {
+  --introHeight: min(102, var(--viewWidthPx) * 0.15);
+  --ratio: calc(var(--introHeight) / 102);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+  /* height: 6vw; */
+  height: calc(1px * var(--introHeight));
+  padding: calc(var(--ratio) * 1em);
+  background-color: var(--bg-transparent);
+  border-radius: 5em;
+  box-shadow: var(--shadow-l);
+  backdrop-filter: blur(3px);
+}
+
+#intro h2 {
+  font-size: calc(var(--ratio) * 2em);
+  color: var(--text-bright);
+  line-height: 1.1;
+}
+
+#yap {
+  font-size: calc(var(--ratio) * 1em);
+  color: var(--text-muted);
+}
+
+#me {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  color: var(--text-bright);
+}
+
+#nameAndYap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+#pfpImg {
+  position: relative;
+  border-radius: 50%;
+  /* height: calc(var(--introHeight) - (var(--ratio) * 2em)); */
+  height: calc((1px * var(--introHeight)) - (var(--ratio) * 2em));
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  box-sizing: content-box;
+}
+
+#socials {
+  display: flex;
+  position: relative;
+  /* height: 10px; */
+}
+
+#socials a {
+  position: relative;
+  height: max-content;
+}
+
+#socials img {
+  position: relative;
+  /* width: 70px;
+  height: 70px; */
+  /* height: calc(var(--introHeight) - (var(--ratio) * 2em)); */
+  height: calc((1px * var(--introHeight)) - (var(--ratio) * 2em));
+  filter: grayscale(100%) brightness(70%);
+  transition: filter 0.3s;
+}
+
+#socials img:hover {
+  filter: grayscale(0%) brightness(90%);
+}
+
+#intro pre {
+  text-wrap: wrap;
 }

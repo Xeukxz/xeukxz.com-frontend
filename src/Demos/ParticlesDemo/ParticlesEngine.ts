@@ -61,6 +61,8 @@ export class ParticlesEngine extends BaseEngine {
     demoBox.contentElement.appendChild(bloomCanvas);
     this.bloomCanvas = new CanvasManager(bloomCanvas);
 
+    this.bloomCanvas.canvas.setAttribute('aria-label', 'Particles Demo Bloom Canvas For Glow Effect');
+
 
     this.colors = fireColors
     this.setPointCount(50000)
@@ -99,21 +101,6 @@ export class ParticlesEngine extends BaseEngine {
 
     this.canvas.canvas.addEventListener('contextmenu', (event) => {
       event.preventDefault();
-    });
-
-    // const headerBar = this.canvas.canvas.parentElement!.parentElement!.querySelector(".headerBar")!;
-    // const reloadButton = headerBar.querySelector(".reloadIcon")!;
-    // const collapseButton = headerBar.querySelector(".collapseIcon")!;
-
-    demoBox.reloadButton.addEventListener("click", () => {
-      this.colors = fireColors
-      this.setPointCount(50000)
-    });
-
-    demoBox.collapseButton.addEventListener("click", () => {
-      if(demoBox.headerBar.parentElement!.classList.contains("collapsed")) this.pause();
-      else this.unpause(250);
-      // this.state.paused ? this.unpause(250) : this.pause()
     });
   }
 
@@ -243,5 +230,10 @@ export class ParticlesEngine extends BaseEngine {
       if (colorIndex >= this.colors.length) colorIndex = 0;
       i++;
     }
+  }
+
+  public reload(): void {
+    this.colors = fireColors
+    this.setPointCount(50000)
   }
 }

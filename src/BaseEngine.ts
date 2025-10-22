@@ -74,4 +74,6 @@ export abstract class BaseEngine {
       if (adjustTick) this._tick += this.ticksMissed;
     }
   }
+
+  public abstract reload(): void;
 }

@@ -1,7 +1,6 @@
 import './Repo.css';
 
 let repoCount = 0;
-let buttonCount = 0;
 
 export class Repo extends HTMLDivElement {
   constructor(private repoName: string, private repoDescription: string, private repoLink: string) {
@@ -12,7 +11,7 @@ export class Repo extends HTMLDivElement {
 
   private render() {
     this.innerHTML = `
-      <div class="borderSvgEffect">
+      <div class="borderSvgEffect" aria-hidden="true">
         <svg preserveAspectRatio="none" class="borderHighlightSvg">
           <defs>
             <mask id="borderMaskRepo${repoCount}" maskUnits="objectBoundingBox" x="-50%" y="-50%" width="200%" height="200%">
@@ -37,6 +36,7 @@ export class Repo extends HTMLDivElement {
         </a>
       </div>
     `;
+    repoCount++;
   }
 }
 

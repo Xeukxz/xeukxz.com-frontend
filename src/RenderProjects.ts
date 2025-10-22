@@ -41,3 +41,9 @@ addRepo(
   `A Lua interpreter written in TypeScript.<br>Not much purpose, its just cool.`,
   "https://github.com/Xeukxz/LuaInterpreter"
 );
+
+addRepo(
+  "Xeukxz.com",
+  "The source code for this website!",
+  "https://github.com/Xeukxz/Xeukxz.com"
+);

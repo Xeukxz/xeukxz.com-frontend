@@ -39,6 +39,7 @@ export class HoverGrid extends HTMLDivElement {
     this.defs.appendChild(this.mask);
     this.svg.appendChild(this.defs);
     this.svg.appendChild(this.dotGroup);
+    this.svg.setAttribute('aria-hidden', 'true');
 
     this.circle.setAttribute('r', this.effectRadius.toString());
     this.circle.setAttribute('cx', '50%');

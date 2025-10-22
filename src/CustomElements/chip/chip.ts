@@ -5,11 +5,12 @@ export class Chip extends HTMLDivElement {
     super();
 
     this.classList.add('chip');
+    this.setAttribute('aria-hidden', 'true');
 
     this.innerHTML += `
       
       <div class="borderSvgEffect">
-        <svg preserveAspectRatio="none" class="borderHighlightSvg">
+        <svg preserveAspectRatio="none" class="borderHighlightSvg" aria-hidden="true">
           <defs>
             <mask id="borderMask" maskUnits="objectBoundingBox" x="-50%" y="-50%" width="200%" height="200%">
               <rect x="0.5" y="0.5" width="calc(100% - 1px)" height="calc(100% - 1px)" rx="0.5em" ry="0.5em" fill="#ff" stroke="#fff" stroke-width="1" clip-path="url(#circleClip)"/>
@@ -26,7 +27,7 @@ export class Chip extends HTMLDivElement {
       <div class="content">
         <h2>${text}</h2>
       </div>
-      <svg class="wires" style="filter: drop-shadow(0 0 1px currentColor) drop-shadow(0 0 3px currentColor)" viewBox="0 0 400 400" preserveAspectRatio="none"  x="-50%" y="-50%" width="200%" height="200%">
+      <svg class="wires" style="filter: drop-shadow(0 0 1px currentColor) drop-shadow(0 0 3px currentColor)" viewBox="0 0 400 400" preserveAspectRatio="none"  x="-50%" y="-50%" width="200%" height="200%" aria-hidden="true">
         <defs>
           <mask id="wiresMask" color="white" maskUnits="objectBoundingBox" x="-100%" y="-100%" width="400%" height="400%">
             ${paths}
