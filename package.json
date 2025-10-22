@@ -1,0 +1,21 @@
+{
+  "name": "xeukxz.com",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "host": "vite --host"
+  },
+  "devDependencies": {
+    "@types/prismjs": "^1.26.5",
+    "typescript": "~5.6.2",
+    "vite": "^6.0.5"
+  },
+  "dependencies": {
+    "marked": "^15.0.6",
+    "prismjs": "^1.29.0"
+  }
+}

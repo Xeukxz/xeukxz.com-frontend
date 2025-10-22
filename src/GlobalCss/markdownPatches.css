@@ -1,0 +1,53 @@
+/* @media (prefers-color-scheme: light) {
+  code:not([class]):not([id]) {
+    background-color: rgb(240, 240, 240, 0.5);
+  }
+} */
+
+/* @media (prefers-color-scheme: dark) {
+  code:not([class]):not([id]) {
+    background-color: rgb(26, 26, 26, 0.5);
+  }
+} */
+
+/* Patch styling for code blocks in markdown */
+code:not([class]):not([id]) {
+  display: inline-block;
+  border-radius: 0.25em;
+  padding: 0.1em 0.25em;
+  background-color: rgb(40, 40, 40, 0.5);
+}
+
+.markdown {
+  color: var(--text);
+}
+
+.markdown h1 {
+  font-size: 2em;
+  margin: 0 0 0.5em 0;
+}
+
+.markdown h2 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+.markdown h3 {
+  font-size: 1.2em;
+  margin: 0.5em 0;
+}
+.markdown h4 {
+  font-size: 1em;
+  margin: 0.5em 0;
+}
+.markdown h5 {
+  font-size: 0.9em;
+  margin: 0.5em 0;
+}
+.markdown h6 {
+  font-size: 0.8em;
+  margin: 0.5em 0;
+}
+
+.markdown p {
+  margin: 0 0 0.25em 0;
+}

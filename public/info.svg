@@ -1,0 +1,11 @@
+<svg class="infoIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="16" height="16">
+  <circle cx="12" cy="12" r="10" fill="none" stroke="white" stroke-width="2"></circle>
+  <!-- line from bottom of circle to miiddle -->
+  <path
+    stroke-width="2"
+    stroke="white"
+    d="M12 22V12"
+  ></path>
+  <!-- rect at 50%,25% -->
+  <rect x="11" y="7" width="2" height="2" fill="white"></rect>
+</svg>

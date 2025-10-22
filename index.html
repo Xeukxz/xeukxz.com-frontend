@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/house.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism-tomorrownight.min.css" rel="stylesheet" /> -->
+    <title>Home</title>
+  </head>
+  <body>
+    <main id="app">
+      <svg width="0" height="0" style="position:absolute">
+        <defs>
+          <filter id="f1" x="-200%" y="-200%" width="800%" height="800%" xmlns="http://www.w3.org/2000/svg">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="30" />
+          </filter>
+          <filter id="f2" x="-200%" y="-200%" width="800%" height="800%" xmlns="http://www.w3.org/2000/svg">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="60" />
+          </filter>
+        </defs>
+      </svg>
+      <section id="demos">
+        <h1 class="topicHeader">Demos</h1>
+      </section>
+      <section id="projects">
+        <h1 class="topicHeader">Projects</h1>
+        <div class="links">
+        </div>
+      </section>
+      <div id="chipZone"></div>
+    </main>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+/* @media (prefers-color-scheme: light) {
+  .codeSnippet {
+    background-color: var(--bg);
+  }
+} */
+
+.codeSnippet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* background-color: #1a1a1a; */
+  box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.4);
+  border-radius: 0.5em;
+  padding: 1em;
+  /* margin: 1em 0; */
+  overflow: auto;
+  max-width: calc(100%);
+  flex: 1 0 auto;
+  /* height: 100%; */
+  backdrop-filter: blur(3px);
+  box-shadow: var(--shadow-s);
+}
+
+pre[class*="language-"] {
+  background-color: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}

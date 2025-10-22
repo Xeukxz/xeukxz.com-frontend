@@ -1,0 +1,20 @@
+.demoLine {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+  /* margin: 1em 0; */
+  flex-wrap: wrap;
+  /* background-color: var(--bg-light);
+  padding: 1em;
+  border-radius: 1em;
+  box-shadow: var(--shadow-s); */
+}
+
+#demos > .demoLine:nth-child(even) {
+  flex-direction: row;
+}
+
+#demos > .demoLine:nth-child(odd) {
+  flex-direction: row-reverse;
+}
